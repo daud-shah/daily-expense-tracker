@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Expense Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Expense Tracker</h1>
+        <form method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="breakfast">Breakfast:</label>
+            <input type="number" id="breakfast" name="breakfast" step="0.01" required>
+
+            <label for="lunch">Lunch:</label>
+            <input type="number" id="lunch" name="lunch" step="0.01" required>
+
+            <label for="dinner">Dinner:</label>
+            <input type="number" id="dinner" name="dinner" step="0.01" required>
+
+            <label for="extra">Other Expenses:</label>
+            <input type="number" id="extra" name="extra" step="0.01" required>
+
+            <label for="travel">Travel Expenses:</label>
+            <input type="number" id="travel" name="travel" step="0.01" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        {% if success %}
+            <p>Expenses saved successfully!</p>
+        {% endif %}
+    </div>
+</body>
+</html>
